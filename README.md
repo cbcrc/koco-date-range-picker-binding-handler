@@ -15,7 +15,7 @@ This is a shared module that is used in many other modules. The convention is to
 ```javascript
 define([
   ...
-  'bower_components/koco-date-range-picker-binding-handler/src/koco-date-range-picker-binding-handler'
+  'bower_components/koco-date-range-picker-binding-handler/src/date-range-picker-binding-handler'
   ...
 ],
 ```
@@ -32,7 +32,7 @@ paths: {
 }
 ```
 
-You'll also need to include in `styles.less`:
+You'll also need to include in your `styles.less`:
 
 ```
 // Core variables and mixins
@@ -41,4 +41,13 @@ You'll also need to include in `styles.less`:
 ...
 // Components
 @import "../components/koco-date-range-picker-binding-handler/src/date-range-picker.less";
+```
+
+Finally, make sure you load the `daterangepicker` library, by convention in `jquery-plugins.js`
+
+```
+define([
+...
+        'daterangepicker',
+...
 ```

@@ -2,10 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 define([
-        'knockout',
-        'jquery',
         'moment',
-        'knockout-disposer'
+        'disposer'
     ],
     function(ko, $, moment, KoDisposer) {
         'use strict';
