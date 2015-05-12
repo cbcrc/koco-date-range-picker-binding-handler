@@ -1,11 +1,11 @@
 // Copyright (c) CBC/Radio-Canada. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-define([
-        'knockout',
+define(['knockout',
         'jquery',
         'moment',
-        'disposer'
+        'disposer',
+        
     ],
     function(ko, $, moment, KoDisposer) {
         'use strict';
@@ -16,7 +16,7 @@ define([
                     format = value.format || 'YYYY-MM-DD',
                     title = value.title || 'Intervalle de dates',
                     startDate = value.startDate(),
-                    endDate = value.endDate(),
+                    endDate = (typeof value.endDate == 'function') ? value.endDate() : null,
                     alwaysShowCalendars = value.alwaysShowCalendars || true,
                     $element = $(element),
                     $button = $('<button type="button" class="btn btn-daterange btn-block">' +
@@ -45,7 +45,8 @@ define([
                             customRangeLabel: 'Autre'
                         },
                         cancelClass: 'btn-danger',
-                        buttonClasses: 'btn btn-sm'
+                        buttonClasses: 'btn btn-sm',
+                        singleDatePicker: value.singleDatePicker || false
                     };
 
                 var koDisposer = new KoDisposer();
@@ -88,12 +89,16 @@ define([
                             value.startDate('');
                             value.endDate('');
                         } else {
-                            $span.html(getDateTitle(start, end, format, title));
-                            value.startDate();
 
                             //TODO: Pas de format hardcodé - ça c'est pour l'API qui s'attend a recevoir ce format
                             value.startDate(start.format('YYYY-MM-DD'));
-                            value.endDate(end.format('YYYY-MM-DD'));
+                            if (value.singleDatePicker) {
+                                end = null;
+                            } else {
+                                value.endDate(end.format('YYYY-MM-DD'));
+                            }
+                            $span.html(getDateTitle(start, end, format, title));
+
                         }
                     }
                 );
@@ -106,6 +111,10 @@ define([
             if (startDate && endDate) {
                 result = startDate.format(format) + ' - ' + endDate.format(format);
             }
+
+            if (startDate && !endDate) {
+                result = startDate.format(format);
+            } 
 
             return result;
         }
