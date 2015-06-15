@@ -29,6 +29,6 @@
   "dependencies": {
     "koco-disposer": "~0.1.1",
     "moment": "~2.9.0",
-    "koco-18next": "~0.3.1"
+    "koco-i18next": "~0.3.1"
   }
 }
