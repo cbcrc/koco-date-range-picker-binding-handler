@@ -34,7 +34,7 @@ paths: {
 
 You'll also need to include in your `styles.less`:
 
-```
+```css
 // Core variables and mixins
 ...
 @import (inline) "../bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css";
@@ -45,7 +45,7 @@ You'll also need to include in your `styles.less`:
 
 Finally, make sure you load the `daterangepicker` library, by convention in `jquery-plugins.js`
 
-```
+```javascript
 define([
 ...
         'daterangepicker',
