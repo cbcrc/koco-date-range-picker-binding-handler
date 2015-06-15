@@ -1,0 +1,36 @@
+{
+    "en": {
+        "date_range_picker": {
+            "date_interval": "Date interval",
+            "today": "Today",
+            "yesterday": "Yesterday",
+            "last_7_days": "Last 7 days",
+            "last_30_days": "Last 30 days",
+            "this_month": "This month",
+            "last_month": "Last month",
+            "apply": "Apply",
+            "cancel": "Cancel",
+            "from": "From",
+            "to": "To",
+            "week_label": "W",
+            "custom_range": "Other"
+        }
+    },
+    "fr": {
+        "date_range_picker": {
+            "date_interval": "Intervalle de dates",
+            "today": "Aujourd'hui",
+            "yesterday": "hier",
+            "last_7_days": "Derniers 7 jours",
+            "last_30_days": "Derniers 30 jours",
+            "this_month": "Ce mois-ci",
+            "last_month": "Le mois passé",
+            "apply": "Appliquer",
+            "cancel": "Supprimer",
+            "from": "Du",
+            "to": "Au",
+            "week_label": "W",
+            "custom_range": "Autre"
+        }
+    }
+}

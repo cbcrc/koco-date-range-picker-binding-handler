@@ -5,16 +5,18 @@ define(['knockout',
         'jquery',
         'moment',
         'disposer',
+        'koco-i18next'
         
     ],
-    function(ko, $, moment, KoDisposer) {
+    function(ko, $, moment, KoDisposer, kocoI18next) {
         'use strict';
 
         ko.bindingHandlers.daterangePicker = {
             init: function(element, valueAccessor /*, allBindingsAccessor, viewModel*/ ) {
                 var value = valueAccessor(),
+                    i18n = kocoI18next.i18next,
                     format = value.format || 'YYYY-MM-DD',
-                    title = value.title || 'Intervalle de dates',
+                    title = value.title || i18n.t('date_range_picker.date_interval'),
                     startDate = value.startDate(),
                     endDate = (typeof value.endDate == 'function') ? value.endDate() : null,
                     alwaysShowCalendars = value.alwaysShowCalendars || true,
@@ -24,25 +26,26 @@ define(['knockout',
                         ' <span>' + title + '</span> ' +
                         '<b class="caret"></b>' +
                         '</button>'),
-                    $span = $button.children('span'),
-                    options = {
+                    $span = $button.children('span');
+                var ranges = {};
+                ranges[i18n.t('date_range_picker.today')()] = [moment(), moment()];
+                ranges[i18n.t('date_range_picker.yesterday')()] = [moment().subtract(1, 'days'), moment().subtract(1, 'days')];
+                ranges[i18n.t('date_range_picker.last_7_days')()] = [moment().subtract(6, 'days'), moment()];
+                ranges[i18n.t('date_range_picker.last_30_days')()] = [moment().subtract(29, 'days'), moment()];
+                ranges[i18n.t('date_range_picker.this_month')()] = [moment().startOf('month'), moment().endOf('month')];
+                ranges[i18n.t('date_range_picker.last_month')()] = [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')];
+
+                var options = {
                         alwaysShowCalendars: alwaysShowCalendars,
                         format: format,
-                        ranges: {
-                            'Aujourd\'hui': [moment(), moment()],
-                            'Hier': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                            'Derniers 7 jours': [moment().subtract(6, 'days'), moment()],
-                            'Derniers 30 jours': [moment().subtract(29, 'days'), moment()],
-                            'Ce mois-ci': [moment().startOf('month'), moment().endOf('month')],
-                            'Le mois passé': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                        },
+                        ranges: ranges,
                         locale: {
-                            applyLabel: 'Appliquer',
-                            cancelLabel: 'Supprimer',
-                            fromLabel: 'Du',
-                            toLabel: 'Au',
-                            weekLabel: 'W',
-                            customRangeLabel: 'Autre'
+                            applyLabel: i18n.t('date_range_picker.apply'),
+                            cancelLabel: i18n.t('date_range_picker.cancel'),
+                            fromLabel: i18n.t('date_range_picker.from'),
+                            toLabel: i18n.t('date_range_picker.to'),
+                            weekLabel: i18n.t('date_range_picker.week_label'),
+                            customRangeLabel: i18n.t('date_range_picker.custom_range')
                         },
                         cancelClass: 'btn-danger',
                         buttonClasses: 'btn btn-sm',
