@@ -26,12 +26,12 @@ define(['knockout',
                         '</button>'),
                     $span = $button.children('span');
                 var ranges = {};
-                ranges[i18n.t('date_range_picker.today')()] = [moment(), moment()];
-                ranges[i18n.t('date_range_picker.yesterday')()] = [moment().subtract(1, 'days'), moment().subtract(1, 'days')];
-                ranges[i18n.t('date_range_picker.last_7_days')()] = [moment().subtract(6, 'days'), moment()];
-                ranges[i18n.t('date_range_picker.last_30_days')()] = [moment().subtract(29, 'days'), moment()];
-                ranges[i18n.t('date_range_picker.this_month')()] = [moment().startOf('month'), moment().endOf('month')];
-                ranges[i18n.t('date_range_picker.last_month')()] = [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')];
+                ranges[i18n.t('date_range_picker.today')] = [moment(), moment()];
+                ranges[i18n.t('date_range_picker.yesterday')] = [moment().subtract(1, 'days'), moment().subtract(1, 'days')];
+                ranges[i18n.t('date_range_picker.last_7_days')] = [moment().subtract(6, 'days'), moment()];
+                ranges[i18n.t('date_range_picker.last_30_days')] = [moment().subtract(29, 'days'), moment()];
+                ranges[i18n.t('date_range_picker.this_month')] = [moment().startOf('month'), moment().endOf('month')];
+                ranges[i18n.t('date_range_picker.last_month')] = [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')];
 
                 var options = {
                         alwaysShowCalendars: alwaysShowCalendars,
