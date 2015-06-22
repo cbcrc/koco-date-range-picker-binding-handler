@@ -5,16 +5,14 @@ define(['knockout',
         'jquery',
         'moment',
         'disposer',
-        'koco-i18next'
-        
+        'i18next'
     ],
-    function(ko, $, moment, KoDisposer, kocoI18next) {
+    function(ko, $, moment, KoDisposer, i18n) {
         'use strict';
 
         ko.bindingHandlers.daterangePicker = {
             init: function(element, valueAccessor /*, allBindingsAccessor, viewModel*/ ) {
                 var value = valueAccessor(),
-                    i18n = kocoI18next.i18next,
                     format = value.format || 'YYYY-MM-DD',
                     title = value.title || i18n.t('date_range_picker.date_interval'),
                     startDate = value.startDate(),
