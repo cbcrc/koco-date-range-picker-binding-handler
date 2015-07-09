@@ -1,0 +1,15 @@
+{
+    "date_interval": "Intervalle de dates",
+    "today": "Aujourd'hui",
+    "yesterday": "hier",
+    "last_7_days": "Derniers 7 jours",
+    "last_30_days": "Derniers 30 jours",
+    "this_month": "Ce mois-ci",
+    "last_month": "Le mois passé",
+    "apply": "Appliquer",
+    "cancel": "Supprimer",
+    "from": "Du",
+    "to": "Au",
+    "week_label": "W",
+    "custom_range": "Autre"
+}
