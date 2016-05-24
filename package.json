@@ -1,27 +1,27 @@
 {
-    "name": "koco-date-range-picker-binding-handler",
-    "version": "0.2.4",
-    "homepage": "https://github.com/cbcrc/koco-date-range-picker-binding-handler",
-    "authors": [
-        "Mark Moyes <mark.moyes@cbc.ca>"
-    ],
-    "description": "Knockout Components binding handler for bootstrap-daterangepicker",
-    "main": "src/koco-date-range-picker-binding-handler/date-range-picker-binding-handler.js",
-    "keywords": [
-        "Knockout",
-        "Koco",
-        "Knockout",
-        "Components",
-        "date",
-        "daterangepicker"
-    ],
-    "scripts": {
-        "build": "rm -rf dist && mkdir dist && cp -r src/* dist && rm -rf dist/*.js && babel src --out-dir dist --modules umd --presets es2015,stage-0"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "koco-disposer": "~0.1.1",
-        "moment": "~2.9.0",
-        "i18next": "~1.9.0"
-    }
+  "name": "koco-date-range-picker-binding-handler",
+  "version": "1.0.0",
+  "homepage": "https://github.com/cbcrc/koco-date-range-picker-binding-handler",
+  "authors": [
+    "Mark Moyes <mark.moyes@cbc.ca>"
+  ],
+  "description": "Knockout Components binding handler for bootstrap-daterangepicker",
+  "main": "src/koco-date-range-picker-binding-handler/date-range-picker-binding-handler.js",
+  "keywords": [
+    "Knockout",
+    "Koco",
+    "Knockout",
+    "Components",
+    "date",
+    "daterangepicker"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && cp -r src/* dist && rm -rf dist/*.js && babel src --out-dir dist --modules umd --presets es2015,stage-0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "koco-disposer": "~0.1.1",
+    "moment": "~2.9.0",
+    "i18next": "~1.9.0"
+  }
 }
