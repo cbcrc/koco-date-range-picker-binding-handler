@@ -4,7 +4,7 @@
 import ko from 'knockout';
 import $ from 'jquery';
 import moment from 'moment';
-import KoDisposer from 'disposer';
+import KoDisposer from 'koco-disposer';
 import i18n from 'i18next';
 
 
