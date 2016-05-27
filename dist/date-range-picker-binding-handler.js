@@ -12,9 +12,9 @@ var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _disposer = require('disposer');
+var _kocoDisposer = require('koco-disposer');
 
-var _disposer2 = _interopRequireDefault(_disposer);
+var _kocoDisposer2 = _interopRequireDefault(_kocoDisposer);
 
 var _i18next = require('i18next');
 
@@ -58,7 +58,7 @@ _knockout2.default.bindingHandlers.daterangePicker = {
             singleDatePicker: value.singleDatePicker || false
         };
 
-        var koDisposer = new _disposer2.default();
+        var koDisposer = new _kocoDisposer2.default();
 
         _knockout2.default.utils.domNodeDisposal.addDisposeCallback(element, function () {
             koDisposer.dispose();
